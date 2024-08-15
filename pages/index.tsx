@@ -4,6 +4,8 @@ export function getServerSideProps({ res }: GetServerSidePropsContext) {
 	const randomNumber = Math.floor(Math.random() * 1000);
 
 	console.log("=== === BACKEND CALLED === ===");
+	console.log(randomNumber);
+	console.log("=== === BACKEND CALLED === ===");
 
 	res.setHeader(
 		"Cache-Control",
