@@ -1,0 +1,9 @@
+## Files
+pnpm-lock.yaml
+
+## Directories
+.netlify
+.next
+.pnpm-store
+.turbo
+node_modules
