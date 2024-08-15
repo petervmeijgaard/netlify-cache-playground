@@ -3,6 +3,8 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 export function getServerSideProps({ res }: GetServerSidePropsContext) {
 	const randomNumber = Math.floor(Math.random() * 1000);
 
+	console.log("=== === BACKEND CALLED === ===");
+
 	res.setHeader(
 		"Cache-Control",
 		"public, durable, max-age=60, stale-while-revalidate=120, stale-if-error=120",
