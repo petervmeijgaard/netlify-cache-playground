@@ -5,12 +5,12 @@ export function getServerSideProps({ res }: GetServerSidePropsContext) {
 
 	res.setHeader(
 		"Cache-Control",
-		"public, durable, max-age=300, stale-while-revalidate=600, stale-if-error=600",
+		"public, durable, max-age=60, stale-while-revalidate=120, stale-if-error=120",
 	);
 
 	res.setHeader(
 		"Netlify-CDN-Cache-Control",
-		"public, durable, max-age=300, stale-while-revalidate=600, stale-if-error=600",
+		"public, durable, max-age=60, stale-while-revalidate=120, stale-if-error=120",
 	);
 
 	return {
