@@ -16,6 +16,9 @@ dependencies:
     version: 17.0.2(react@17.0.2)
 
 devDependencies:
+  '@netlify/edge-functions':
+    specifier: ^2.10.0
+    version: 2.10.0
   '@types/node':
     specifier: ^20.14.15
     version: 20.14.15
@@ -97,6 +100,10 @@ packages:
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
+    dev: true
+
+  /@netlify/edge-functions@2.10.0:
+    resolution: {integrity: sha512-toDBus02KyXTeErqXh9mFjH5ocGwSDO8w9q1TkSincqExtm8TMITg3iXr4/SPKE17nKt+olsEuIry5hyM8OJBQ==}
     dev: true
 
   /@next/env@12.3.4:
