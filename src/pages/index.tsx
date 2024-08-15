@@ -1,6 +1,13 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { parseCookies } from "../helpers";
 
-export function getServerSideProps({ res }: GetServerSidePropsContext) {
+export function getServerSideProps({ res, req }: GetServerSidePropsContext) {
+	const cookies = parseCookies(req.headers.cookie ?? "");
+
+	if (cookies.get("exception") === "true") {
+		throw new Error("Error thrown from backend");
+	}
+
 	const randomNumber = Math.floor(Math.random() * 1000);
 
 	console.log("=== === BACKEND CALLED === ===");
