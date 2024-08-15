@@ -1,6 +1,8 @@
-import { GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 
 export function getServerSideProps({ res }: GetServerSidePropsContext) {
+	const randomNumber = Math.floor(Math.random() * 1000);
+
 	res.setHeader(
 		"Cache-Control",
 		"public, max-age=300, stale-while-revalidate=600, stale-if-error=600",
@@ -12,10 +14,14 @@ export function getServerSideProps({ res }: GetServerSidePropsContext) {
 	);
 
 	return {
-		props: {},
+		props: {
+			randomNumber,
+		},
 	};
 }
 
-export default function Home() {
-	return <div>Hello world!</div>;
+export default function Home({
+	randomNumber,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	return <div>{randomNumber}</div>;
 }
